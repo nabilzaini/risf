@@ -26,10 +26,6 @@ public class Receipt {
         return receipt + "Sales Taxes :" + totalSalesTaxes + " Total: " + totalAmount;
     }
 
-    public Products getProducts() {
-        return products;
-    }
-
     public double getTotalSalesTaxes() {
         return totalSalesTaxes;
     }

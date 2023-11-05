@@ -19,11 +19,6 @@ public class Products {
         return productList;
     }
 
-    public Products setProductList(List<Product> productList) {
-        this.productList = productList;
-        return this;
-    }
-
     public Optional<Double> getAmountFromProductName(String name) {
         return productList.stream()
                 .filter(p -> p.getName().equals(name))
