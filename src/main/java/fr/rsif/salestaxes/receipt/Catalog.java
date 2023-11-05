@@ -21,8 +21,8 @@ public class Catalog {
     }
 
     public void createProduct(String name, double price, boolean imported, int quantity) {
-        Product instence = categoryProduct.get(name).getFactory().getInstence(name, price, imported, quantity);
-        products.addProduct(instence);
+        Product instance = categoryProduct.get(name).getFactory().getInstance(name, price, imported, quantity);
+        products.addProduct(instance);
     }
 
     private void addProductToCatalog(String productName, Product productType) {

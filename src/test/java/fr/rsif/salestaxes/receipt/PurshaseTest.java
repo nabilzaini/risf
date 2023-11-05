@@ -17,7 +17,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 class PurshaseTest {
     Purshase purshase = new Purshase();
 
-    static Stream<Arguments> addInstenceProduct() {
+    static Stream<Arguments> addInstanceProduct() {
         return Stream.of(
                 Arguments.of("book", 12.49, false, 1, BookProduct.class),
                 Arguments.of("music CD", 14.99, false, 1, OtherProduct.class),
@@ -28,7 +28,7 @@ class PurshaseTest {
 
 
     @ParameterizedTest
-    @MethodSource("addInstenceProduct")
+    @MethodSource("addInstanceProduct")
     void addProductToCatalog(String name, double price, boolean imported, int quantity, Class classExpected) {
         //GIVEN & WHEN
         purshase.addProductToCatalog(name, price, imported, quantity);

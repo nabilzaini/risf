@@ -5,7 +5,7 @@ import fr.rsif.salestaxes.product.Product;
 
 public class MedicalProductFactory implements ProductFactory {
     @Override
-    public Product getInstence(String name, double price, boolean imported, int quantiy) {
+    public Product getInstance(String name, double price, boolean imported, int quantiy) {
         return new MedicalProduct(name, price, imported, quantiy);
     }
 }
