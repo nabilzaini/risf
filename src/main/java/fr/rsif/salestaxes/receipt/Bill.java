@@ -43,4 +43,8 @@ public class Bill {
         }
         return totalAmount;
     }
+
+    public Products getProducts() {
+        return products;
+    }
 }

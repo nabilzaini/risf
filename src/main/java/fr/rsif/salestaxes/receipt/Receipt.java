@@ -18,10 +18,23 @@ public class Receipt {
 
     @Override
     public String toString() {
-        String receipt = "\n------------------------------------------\n";
+        StringBuilder receipt = new StringBuilder();
+        receipt.append("\n------------------------------------------\n");
         for (Product product : products.getProductList()) {
-            receipt += product.toString() + "\n";
+            receipt.append(product.toString() + "\n");
         }
         return receipt + "Sales Taxes :" + totalSalesTaxes + " Total: " + totalAmount;
+    }
+
+    public Products getProducts() {
+        return products;
+    }
+
+    public double getTotalSalesTaxes() {
+        return totalSalesTaxes;
+    }
+
+    public double getTotalAmount() {
+        return totalAmount;
     }
 }

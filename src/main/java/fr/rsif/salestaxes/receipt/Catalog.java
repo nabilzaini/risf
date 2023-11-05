@@ -7,11 +7,11 @@ import java.util.Map;
 
 public class Catalog {
     private Products products;
-    private Map<String, Product> catalogProduct;
+    private Map<String, Product> categoryProduct;
 
     public Catalog() {
         products = new Products();
-        catalogProduct = new HashMap<>();
+        categoryProduct = new HashMap<>();
         addProductToCatalog("book", new BookProduct());
         addProductToCatalog("music CD", new OtherProduct());
         addProductToCatalog("chocolate bar", new FoodProduct());
@@ -21,12 +21,12 @@ public class Catalog {
     }
 
     public void createProduct(String name, double price, boolean imported, int quantity) {
-        Product instence = catalogProduct.get(name).getFactory().getInstence(name, price, imported, quantity);
+        Product instence = categoryProduct.get(name).getFactory().getInstence(name, price, imported, quantity);
         products.addProduct(instence);
     }
 
     private void addProductToCatalog(String productName, Product productType) {
-        catalogProduct.put(productName, productType);
+        categoryProduct.put(productName, productType);
     }
 
     public Products getProducts() {

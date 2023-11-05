@@ -3,6 +3,7 @@ package fr.rsif.salestaxes.receipt;
 public class Purshase {
     private Catalog catalog;
     private Receipt receipt;
+    private Bill bill;
 
     public Purshase() {
         this.catalog = new Catalog();
@@ -13,12 +14,24 @@ public class Purshase {
     }
 
     public void validPayment() {
-        Bill bill = new Bill(catalog.getProducts());
+        bill = new Bill(catalog.getProducts());
         bill.calculPriceWithTaxeAllProducts();
         receipt = new Receipt(catalog.getProducts(), bill.calculTotalSalesTaxes(), bill.calculTotalAmount());
     }
 
     public void displayReceipt() {
         System.out.println(receipt);
+    }
+
+    public Catalog getCatalog() {
+        return catalog;
+    }
+
+    public Bill getBill() {
+        return bill;
+    }
+
+    public Receipt getReceipt() {
+        return receipt;
     }
 }
