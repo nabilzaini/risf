@@ -1,6 +1,7 @@
-package fr.rsif.salestaxes.receipt;
+package fr.rsif.salestaxes.tu.receipt;
 
 import fr.rsif.salestaxes.product.*;
+import fr.rsif.salestaxes.receipt.Catalog;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
@@ -23,7 +24,6 @@ class CatalogTest {
                 Arguments.of("chocolate bar", 0.85, false, 1, FoodProduct.class)
         );
     }
-
 
     @ParameterizedTest
     @MethodSource("addInstanceProduct")

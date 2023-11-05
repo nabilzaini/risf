@@ -1,6 +1,10 @@
-package fr.rsif.salestaxes.receipt;
+package fr.rsif.salestaxes.tu.receipt;
 
 import fr.rsif.salestaxes.product.*;
+import fr.rsif.salestaxes.receipt.Bill;
+import fr.rsif.salestaxes.receipt.Catalog;
+import fr.rsif.salestaxes.receipt.Purshase;
+import fr.rsif.salestaxes.receipt.Receipt;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
@@ -43,13 +47,13 @@ class PurshaseTest {
 
     static Stream<Arguments> productsWithPriceAndTaxe() {
         return Stream.of(
-                //Product excempt + local
+                //Product exempt + local
                 Arguments.of("book", 12.49, false, 1, 12.49),
-                //Product is not excempt + local
+                //Product is not exempt + local
                 Arguments.of("music CD", 14.99, false, 1, 16.49),
-                //Product  excempt + imported
+                //Product  exempt + imported
                 Arguments.of("box of chocolates", 10, true, 1, 10.50),
-                //Product is not excempt + imported
+                //Product is not exempt + imported
                 Arguments.of("bottle of perfume", 47.50, true, 1, 54.65)
         );
     }

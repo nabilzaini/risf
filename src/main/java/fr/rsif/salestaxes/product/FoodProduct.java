@@ -14,7 +14,7 @@ public class FoodProduct extends Product {
 
     @Override
     public double defaultTaxe() {
-        return TaxeValues.EXCEMPT_LOCAL_PRODUCT_TAXE;
+        return TaxeValues.EXEMPT_LOCAL_PRODUCT_TAXE;
     }
 
     @Override
