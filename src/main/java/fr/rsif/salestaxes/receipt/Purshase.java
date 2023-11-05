@@ -2,7 +2,6 @@ package fr.rsif.salestaxes.receipt;
 
 public class Purshase {
     private Catalog catalog;
-    private Bill bill;
     private Receipt receipt;
 
     public Purshase() {
@@ -14,7 +13,7 @@ public class Purshase {
     }
 
     public void validPayment() {
-        bill = new Bill(catalog.getProducts());
+        Bill bill = new Bill(catalog.getProducts());
         bill.calculPriceWithTaxeAllProducts();
         receipt = new Receipt(catalog.getProducts(), bill.calculTotalSalesTaxes(), bill.calculTotalAmount());
     }

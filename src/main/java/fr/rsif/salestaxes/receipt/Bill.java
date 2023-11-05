@@ -5,6 +5,8 @@ import fr.rsif.salestaxes.product.Products;
 import fr.rsif.salestaxes.taxe.CalculTaxe;
 import fr.rsif.salestaxes.taxe.CalculTaxeImpl;
 
+import java.math.BigDecimal;
+
 import static fr.rsif.salestaxes.utils.Utils.roundOff;
 
 public class Bill {
@@ -19,7 +21,9 @@ public class Bill {
     public void calculPriceWithTaxeAllProducts() {
         for (Product product : products.getProductList()) {
             double productTaxe = calculTaxe.calculTaxe(product.defaultTaxe(), product.getPrice(), product.isImported());
-            double priceWithTaxe = product.getPrice() + productTaxe;
+            double priceWithTaxe = BigDecimal.valueOf(product.getPrice())
+                    .add(BigDecimal.valueOf(productTaxe))
+                    .doubleValue();
             product.setPriceWithTaxe(priceWithTaxe);
         }
     }

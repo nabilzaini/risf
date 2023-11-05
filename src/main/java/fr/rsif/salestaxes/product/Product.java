@@ -1,7 +1,6 @@
 package fr.rsif.salestaxes.product;
 
 import fr.rsif.salestaxes.product.factory.ProductFactory;
-import fr.rsif.salestaxes.utils.Utils;
 import org.apache.logging.log4j.util.Strings;
 
 
@@ -67,7 +66,7 @@ public abstract class Product {
     }
 
     public Product setPriceWithTaxe(double priceWithTaxe) {
-        this.priceWithTaxe = Utils.truncateDouble(priceWithTaxe);
+        this.priceWithTaxe = priceWithTaxe;
         return this;
     }
 

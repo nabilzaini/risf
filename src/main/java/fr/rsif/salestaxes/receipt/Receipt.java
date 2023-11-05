@@ -2,8 +2,8 @@ package fr.rsif.salestaxes.receipt;
 
 import fr.rsif.salestaxes.product.Product;
 import fr.rsif.salestaxes.product.Products;
-import fr.rsif.salestaxes.utils.Utils;
-import org.apache.logging.log4j.util.Strings;
+
+import static fr.rsif.salestaxes.utils.Utils.truncateDouble;
 
 public class Receipt {
     private Products products;
@@ -12,13 +12,13 @@ public class Receipt {
 
     public Receipt(Products products, double totalSalesTaxes, double totalAmount) {
         this.products = products;
-        this.totalSalesTaxes = Utils.truncateDouble(totalSalesTaxes);
-        this.totalAmount = Utils.truncateDouble(totalAmount);
+        this.totalSalesTaxes = truncateDouble(totalSalesTaxes);
+        this.totalAmount = truncateDouble(totalAmount);
     }
 
     @Override
     public String toString() {
-        String receipt = "------------------------------------------\n";
+        String receipt = "\n------------------------------------------\n";
         for (Product product : products.getProductList()) {
             receipt += product.toString() + "\n";
         }

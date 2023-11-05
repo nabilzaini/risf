@@ -17,6 +17,7 @@ public class SalesTaxesApplication {
     CommandLineRunner run() {
         return args -> {
             //INPUT1
+
             Purshase purshase1 = new Purshase();
 
             purshase1.addProductToCatalog("book", 12.49, false, 1);
