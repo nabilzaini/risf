@@ -1,6 +1,5 @@
 package fr.rsif.salestaxes.utils;
 
-import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
@@ -40,7 +39,7 @@ class UtilsTest {
     @MethodSource("rounded")
     void roundOff(double number, double numberRoundedExpected) {
         //GIVEN && WHEN
-        double numberRoundedActual = Utils.roundOff(number);
+        double numberRoundedActual = Utils.round(number);
         //THEN
         assertEquals(numberRoundedExpected, numberRoundedActual);
     }

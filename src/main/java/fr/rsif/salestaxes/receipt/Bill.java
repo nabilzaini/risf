@@ -7,7 +7,8 @@ import fr.rsif.salestaxes.taxe.CalculTaxeImpl;
 
 import java.math.BigDecimal;
 
-import static fr.rsif.salestaxes.utils.Utils.roundOff;
+import static fr.rsif.salestaxes.utils.Utils.round;
+
 
 public class Bill {
     private CalculTaxe calculTaxe;
@@ -33,7 +34,7 @@ public class Bill {
         for (Product product : products.getProductList()) {
             totalSalesTaxes += product.getPriceWithTaxe() - product.getPrice();
         }
-        return roundOff(totalSalesTaxes);
+        return round(totalSalesTaxes);
     }
 
     public double calculTotalAmount() {
